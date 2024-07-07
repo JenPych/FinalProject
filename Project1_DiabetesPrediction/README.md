@@ -49,56 +49,56 @@ Steps to follow:
 
 * Pregnancies:
 
-![pregnancies.png](Project1_DiabetesPrediction/Figures/Pregnancies.png)
+![pregnancies.png](Figures/Pregnancies.png)
 
 Continuous data, seems like right skewness as there are many 0 pregnancies. My initial assumption is that it may have weak correlation with diabetes.
 
 
 * Glucose:
 
-![Glucose.png](Project1_DiabetesPrediction/Figures/Glucose.png)
+![Glucose.png](Figures/Glucose.png)
 
 It consists the report of 2 hours oral glucose tolerance test. Continuous data and is normally distributed. It may have a strong relation with diabetes.
 
 
 * BloodPressure:
 
-![BloodPressure.png](Project1_DiabetesPrediction/Figures/BloodPressure.png)
+![BloodPressure.png](Figures/BloodPressure.png)
 
 Diastolic blood pressure report. Continuous data and seems like it is normally distributed. However, it has subgroups suggesting multi-modality. I am assuming blood pressure could have positive correlation with diabetes.
 
 
 * Skin Thickness: 
 
-![Skinthickness.png](Project1_DiabetesPrediction/Figures/SkinThickness.png)
+![Skinthickness.png](Figures/SkinThickness.png)
 
 Triceps skin fold thickness in (mm). Continuous data, uniform distributed and has lots of 0s. However, it has subgroups suggesting multi-modality. May have low relation with diabetes.
 
 
 * Insulin:
 
-![Insulin.png](Project1_DiabetesPrediction/Figures/Insulin.png)
+![Insulin.png](Figures/Insulin.png)
 
 Continuous data, right skewness and has lots of 0s. Many outliers. Assuming weak correlation with diabetes.
 
 
 * BMI: 
 
-![BMII.png](Project1_DiabetesPrediction/Figures/BMI.png)
+![BMII.png](Figures/BMI.png)
 
 Continuous data with normal distribution.Few datas in 0s suggesting multi-modality. May have positive correlation with outcome.
 
 
 * DiabetesPedigreeFunction: 
 
-![DPFpng.png](Project1_DiabetesPrediction/Figures/DiabetesPedigreeFunction.png)
+![DPFpng.png](Figures/DiabetesPedigreeFunction.png)
 
 Continuous data, right skewness. Many outliers but May have weak correlation with outcome.
 
 
 * Age:
 
-![Age.png](Project1_DiabetesPrediction/Figures/Age.png)
+![Age.png](Figures/Age.png)
 
 Continuous data, not normally distributed as lots of female are 21 years old. Assuming age may have positive correlation with outcome.
 
@@ -106,7 +106,7 @@ Continuous data, not normally distributed as lots of female are 21 years old. As
 
 Outcome
 
-![Outcome_count.png](Project1_DiabetesPrediction/Figures/Outcome.png)
+![Outcome_count.png](Figures/Outcome.png)
 
 It is a binary data type of categorical data. 0s indicating that the patient is not diabetic and 1s representing that the patient is diabetic.
 The above figure shows that 500 people do not have diabetes and 268 have diabetes.
@@ -125,7 +125,7 @@ Also, Age is abnormally distributed as there are lots of 21 years old. Diabetic 
 Finally, BMI, blood-pressure and Glucose level seems like normally distributed and may be more reliable than others.
 # Pairplot
 sns.pairplot(df, hue = 'Outcome', height = 1.5, aspect = 1)
-![pairplot.png](Project1_DiabetesPrediction/Figures/pairplot.png)
+![pairplot.png](Figures/pairplot.png)
 
 Upon observing the pair-plot, I was unable to distinguish any sorts of precise correlation between the variables. However, I can confirm that there are many outliers in some variables.
 Also, there is right sided skewness in Pregnancies, Insulin, Diabetes Pedigree Function and Age.
@@ -134,7 +134,7 @@ We will be looking in each individual features to find outliers below.
 # Heatmap
 sns.heatmap(df.corr(numeric_only = True),
        'shrink': 0.8})
-![correlation.png](Project1_DiabetesPrediction/Figures/correlation.png)
+![correlation.png](Figures/correlation.png)
 
 The above figure shows that the highest correlation "Outcome" has is 0.47 corr. coefficient with Glucose (marked as red).
 Other close ones are BMI, Age and Pregnancies with corr. coefficient 0.29, .0.24 and 0.22 respectively. 
@@ -149,7 +149,7 @@ Therefore, Glucose, BMI and Age are considered as appropriate independent variab
 
 # Boxplot for detecting outliers
 
-![Outlier.png](Project1_DiabetesPrediction/Figures/Outlier.png)
+![Outlier.png](Figures/Outlier.png)
 
 The figure shows that there is significant outliers in 'Insulin'
 Considering Glucose, BMI and Age, outliers are present in them as well but not as significant as one in Insulin.
@@ -250,11 +250,11 @@ print(plt.show())
 Result:
 While using 'rbf' kernel:
 
-![ConfusionMatrixDisplay_rbf.png](Project1_DiabetesPrediction/Figures/ConfusionMatrixDisplay_rbf.png)
+![ConfusionMatrixDisplay_rbf.png](Figures/ConfusionMatrixDisplay_rbf.png)
 
 While using 'linear' kernel:
 
-![ConfusionMatrixDisplay_linear.png](Project1_DiabetesPrediction/Figures/ConfusionMatrixDisplay_linear.png)
+![ConfusionMatrixDisplay_linear.png](Figures/ConfusionMatrixDisplay_linear.png)
 
 Lets talk about while using Linear Kernel:
 
