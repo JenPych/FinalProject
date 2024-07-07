@@ -50,7 +50,7 @@ Steps to follow:
 
 * TV: Continuous data
 
-![TV.png](Project2_SalesPrediction/Figure_Sales/TV.png)
+![TV.png](Figure_Sales/TV.png)
 
 The figure above shows the relation between cost of advert in Television and Sales output from it.
 Upon observing, there is a positive linear increment in sales as the cost of advert increases.
@@ -58,7 +58,7 @@ We can expect high correlation with sales and a strong candidate for the main fe
 
 * Radio: Continuous data
 
-![Radio.png](Project2_SalesPrediction/Figure_Sales/Radio.png)
+![Radio.png](Figure_Sales/Radio.png)
 
 The figure above shows the relation between cost of advert in Radio and Sales output from it.
 Upon observing, there seems like a positive increment in sales as the cost of advert increases.
@@ -67,7 +67,7 @@ We can expect somewhat moderate to weak correlation with sales and a potential c
 
 * Newspaper: Continuous data
 
-![Newspaper.png](Project2_SalesPrediction/Figure_Sales/Newspaper.png)
+![Newspaper.png](Figure_Sales/Newspaper.png)
 
 The figure above shows the relation between cost of advert in newspaper and Sales output from it.
 Upon observing, the data is spread out and linear relation cannot be drawn from it. 
@@ -78,7 +78,7 @@ We can expect somewhat weak or no correlation with sales and a potential skip fo
 
 * Target = Sales: Continuous data
 
-![sales.png](Project2_SalesPrediction/Figure_Sales/sales.png)
+![sales.png](Figure_Sales/sales.png)
 
 The figure above shows sales count with a minimum of 1.60 and maximum sales of 27.00.
 Upon observation, the data seems to be normally distributed as most of the data lies around the middle.
@@ -98,7 +98,7 @@ Let's plot some diagrams to visualize and confirm our assumptions.
 
 * pairplot
 
-![pairplot.png](Project2_SalesPrediction/Figure_Sales/pairplot.png)
+![pairplot.png](Figure_Sales/pairplot.png)
 
 Here in the pairplot, we can confirm that TV and radio has positive correlation with sales and
 newspaper does not seem to have or has a weak correlation. Also, we can see that TV and radio is 
@@ -108,7 +108,7 @@ Let's check if there is any outliers in the data.
 
 * boxplot
 
-![boxplot.png](Project2_SalesPrediction/Figure_Sales/boxplot.png)
+![boxplot.png](Figure_Sales/boxplot.png)
 
 The boxplot here shows that there are outliers in the newspaper data further diminishing its
 case to be one of the features. Also, mean is higher in TV compared to others, indicating that
@@ -117,14 +117,14 @@ will be out-casted as well. We will make further cases to check if its correct t
 
 * heatmap to show correlation of numeric data
 
-![correlation.png](Project2_SalesPrediction/Figure_Sales/correlation.png)
+![correlation.png](Figure_Sales/correlation.png)
 
 Now, this makes it clearer. We can see that there is high correlation coefficient of 
 0.78 between TV and sales and also no or very weak correlation with other independent variable.
 Therefore, we will definitely have TV as our main feature in or ML model.
 
 Let's look into radio. It also has a positive correlation with sales with 0.58 correlation coefficient.
-Although it isnt as high as TV, it isnt close to 0 either. Since, it also doent have outliers, we will 
+Although it isn't as high as TV, it isn't close to 0 either. Since, it also doent have outliers, we will 
 adjust radio as our second feature and evaluate what is the best.
 
 As for newspaper, correlation coefficient of 0.23 is relatively weak compared to others and also has outliers.
@@ -140,7 +140,7 @@ df.loc[z_score > 3, 'newspaper'] = median_wout_outlier
 
 Now, lets visualize the boxplot
 
-![npaper_noutlier_check.png](Project2_SalesPrediction/Figure_Sales/npaper_noutlier_check.png)
+![npaper_noutlier_check.png](Figure_Sales/npaper_noutlier_check.png)
 
 The figure above shows that we have addressed the outliers by replacing
 z-score greater than 3 with median od the data.
@@ -148,7 +148,7 @@ z-score greater than 3 with median od the data.
 Now, lets see if the correlation has improved significantly. If it does, 
 newspaper will be considered as feature for our model.
 
-![corr_after_outlier.png](Project2_SalesPrediction/Figure_Sales/corr_after_outlier.png)
+![corr_after_outlier.png](Figure_Sales/corr_after_outlier.png)
 
 As you can see in the figure, correlation has dropped slightly by 0.1.
 Now its confirmed, there is no point in taking newspaper as a feature anymore.
