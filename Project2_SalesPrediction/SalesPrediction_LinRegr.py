@@ -28,7 +28,7 @@ print(df.dtypes)
 df = df.drop(columns = ['Unnamed: 0'], axis = 1)
 print(df.head())
 
-print(df.describe(()))
+print(df.describe())
 
 # Exploratory Data Analysis and Inspection
 
