@@ -266,39 +266,6 @@ we will still consider adding them if it improved our result.
 Finally, age and department will not be considered as features as age has more than 80% data missing
 and department being a nominal categorical data has no impact on weather a staff stays or leaves.
 
-# Selecting Independent and Dependent Variables
-
-X = df[
-    ['satisfaction_level', 'last_evaluation', 'number_project', 'average_montly_hours', 'time_spend_company',
-     'Work_accident', 'promotion_last_5years', 'salary_encoded']]
-y = df['left_encoded']
-
-# Train Test Split
-
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 42)
-
-#  Machine Learning Model
-# using SVC
-
-model = Pipeline([('scaler', StandardScaler()), ('svm', SVC(kernel = 'rbf', gamma = 'scale'))])
-model.fit(X_train, y_train)
-
-y_pred = model.predict(X_test)
-
-#  Evaluation and Conclusion
-
-# using f1 score to check accuracy and displaying Confusion matrix
-
-print(f'f1_score = {f1_score(y_true = y_test, y_pred = y_pred)}')
-print(f'accuracy_score = {accuracy_score(y_true = y_test, y_pred = y_pred)}')
-
-# Evaluating using ConfusionMatrixDisplay
-
-ConfusionMatrixDisplay.from_estimator(model, X_test, y_test, cmap = "Accent_r")
-plt.title("kernel = rbf")
-plt.savefig(os.path.join(save_dir, 'ConfusionMatrixDisplay_rbf.png'))
-print(plt.show())
-
 
 # Selecting features (X) and target (y)
 
